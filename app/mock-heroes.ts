@@ -1,3 +1,8 @@
+/*Part 5 of Heroes tutorial on https://angular.io/docs/ts/latest/tutorial/toh-pt5.html  Routing 
+Action plan:
+
+*/
+
 /*---DONE IN THIS FILE Services part of tutorial: We created mock hero data and...in different file, imported them into our service---*/
 import {Hero} from './hero';/* we copied over import {Hero}... statement bc the heroes array uses the Hero interface. */
 

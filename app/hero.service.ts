@@ -1,3 +1,8 @@
+/*Part 5 of Heroes tutorial on https://angular.io/docs/ts/latest/tutorial/toh-pt5.html  Routing 
+Action plan:
+
+*/
+
 /*Separation of concerns. we're keeping our data source separate from components which deal mostly with the view*/
 import {Hero} from './hero';
 /*---DONE BELOW Services part of tutorial: We created mock hero data with mock-heroes.ts and imported them into our service here---*/

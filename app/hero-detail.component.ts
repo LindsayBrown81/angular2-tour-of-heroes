@@ -1,3 +1,8 @@
+/*Part 5 of Heroes tutorial on https://angular.io/docs/ts/latest/tutorial/toh-pt5.html  Routing 
+Action plan:
+
+*/
+
 import {Component} from 'angular2/core';
 import {Hero} from './hero';
 /*HeroDetailComponent is our app's first reusable component! ~as it's not the root component*/
