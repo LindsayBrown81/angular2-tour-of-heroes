@@ -30,8 +30,7 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
                 function HeroService() {
                 }
                 HeroService.prototype.getHeroes = function () {
-                    /*---DONE BELOW Services part of tutorial: We designed our service to return a promise---*/
-                    return Promise.resolve(mock_heroes_1.HEROES); /*replaced return HEROES; We're still mocking the data. We're simulating the behavior of an ultra-fast, zero-latency server, by returning an immediately resolved promise with our mock heroes as the result.*/
+                    return Promise.resolve(mock_heroes_1.HEROES);
                 };
                 // See the "Take it slow" appendix
                 HeroService.prototype.getHeroesSlowly = function () {
@@ -40,6 +39,9 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
                     } // 2 seconds
                      // 2 seconds
                     );
+                };
+                HeroService.prototype.getHero = function (id) {
+                    return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
                 };
                 HeroService = __decorate([
                     /*Notice that we imported the Angular Injectable function and applied that function as an @Injectable() decorator.*/ core_1.Injectable(), 

@@ -1,0 +1,24 @@
+<!--Copy, cut, and pasted from heroes.component.ts bc template was too long. 
+  /*double curly braces tell our app to read the title and hero properties from the component and render them. This is the "interpolation" form of one-way data binding.*/
+  /*We want the user to select a hero from our list, and have the selected hero appear in the details view.This UI pattern is widely known as "master-detail"*/
+  /*asterisks indicates that the li and its children constitute a master template. hash prefix identifies the hero as a local template variable. We can reference this variable within the template to access a hero’s properties*/
+  /*[class.selected]="hero === selectedHero" We’re saying “apply the selected class if the heroes match, remove it if they don’t”.*/
+  /*We connected the master to the detail through a selectedHero component property bound to a click event. We replaced the static hero property with selectedHero*/
+  /*Notice in the template that the class.selected is surrounded in square brackets ([]). This is the syntax for a Property Binding, a binding in which data flows one way from the data source (the expression hero === selectedHero) to a property of class.  */
+  /*CAPITAL LETTERS. That's the effect of the UpperCasePipe that we slipped into the interpolation binding. Look for it right after the pipe operator, ( | ).-->
+  
+<h2>My Heroes</h2> 
+<ul class="heroes">
+  <li *ngFor="#hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+    

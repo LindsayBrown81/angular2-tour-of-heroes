@@ -4,10 +4,11 @@ Action plan:
 -->
 <html>
   <head>
+  <base href="/">
     <title>angular2-tour-of-heroes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">    
+    
     <link rel="stylesheet" href="styles.css">
-
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order. IE requires polyfills to run an application that relies on ES2015 promises and dynamic module loading. Most applications need those capabilities and most applications should run in Internet Explorer.
 -->
@@ -19,11 +20,13 @@ Action plan:
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script> <!--loads the web development version of Angular 2 itself-->
+    <script src="node_modules/angular2/bundles/router.dev.js"></script><!--must be inserted immediately after Angular script-->
+
 
     <!-- 2. Configure SystemJS. We suggest becoming well-versed in the loader of your choice-->
     <script>
       System.config({
-        packages: {        //The packages node tells SystemJS what to do when it sees a request (from an import statement from a ts file) for a module from the app/ folder.
+        packages: { //The packages node tells SystemJS what to do when it sees a request (from an import statement from a ts file) for a module from the app/ folder.
           app: {
             format: 'register',
             defaultExtension: 'js'
@@ -41,7 +44,7 @@ Action plan:
   </body>
 </html>
 
-<!-- Why we pre-compile instead of transpiling in the browser:-->
+<!--Why we pre-compile instead of transpiling in the browser:-->
 <!--We see compiler warnings and errors that are hidden from us in the browser.-->
 <!--Pre-compilation simpifies the module loading process and it's much easier to diagnose problem when this is a separate, external step.-->
 <!--Pre-compilation means a faster user experience because the browser doesn't waste time compiling.-->
